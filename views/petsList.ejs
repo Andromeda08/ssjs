@@ -1,0 +1,53 @@
+<%- include('_header') -%>
+<div class="app-layout">
+  <div class="app-navbar">
+    <span>Viewing Pets of <%= owner.name %></span>
+    <div>
+      <a href="/pet/<%= owner.id %>/new">New</a>
+      <a href="/owner">Back</a>
+      <a href="/logout">Logout</a>
+    </div>
+  </div>
+  <div class="app-content table-view">
+    <div class="table-container">
+      <table class="grid-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Species</th>
+            <th>Sex</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% pets.forEach(function(pet) { %> 
+            <tr>
+              <td>
+                <%= pet.name %>
+              </td>
+              <td>
+                <%= pet.birthday %>
+              </td>
+              <td>
+                <%= pet.species %>
+              </td>
+              <td>
+                <%= pet.sex %> 
+              </td>
+              <td class='actions'>
+                <a href="/pet/<%= owner.id %>/edit/<%= pet.id %>">
+                  <i class="fas fa-pencil-alt"></i>
+                </a>
+                <a href="/pet/<%= owner.id %>/delete/<%= pet.id %>" class="hover-red">
+                  <i class="fas fa-trash-alt"></i>
+                </a>
+              </td>
+            </tr>
+            <% }); %> 
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%- include('_footer') -%>

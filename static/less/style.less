@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+@import '_reset';
+
+// Colors
+@real-black: #000;
+@black: #080808;
+@not-black: #141414;
+@real-white: #fff;
+@white: #f5f5f5;
+@not-white: #e5e5e5;
+
+@blue: #5865F2;
+@green: #57F287;
+@yellow: #FEE75C;
+@red: #ED4245;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Nunito', sans-serif;
+
+  color: @black;
+  background: @white;
+
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.login-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .login-form {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+
+    padding: 2em;
+    background: @not-black;
+    color: @white;
+    border-radius: .5rem;
+
+    box-shadow: 5px 10px 18px #00000030;
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.form-input {
+  width: 100%;
+  padding: .8rem 1rem;
+
+  border: 1px solid #333;
+  border-radius: .5rem;
+
+  color: @not-white;
+  background: #080808;
+
+  font-size: .9rem;
+}
+
+.btn {
+  width: fit-content;
+  padding: .75rem 1rem;
+
+  color: @white;
+  background: @not-black;
+  border: 1px solid @not-black;
+  border-radius: .5rem;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-blue {
+  .btn;
+  color: @black;
+  background: @blue;
+  border: 1px solid @blue;
+}
+
+.btn-green {
+  .btn;
+  color: @black;
+  background: @green;
+  border: 1px solid @green;
+}
+
+.btn-yellow {
+  .btn;
+  color: @black;
+  background: @yellow;
+  border: 1px solid @yellow;
+}
+
+.btn-red {
+  .btn;
+  color: @black;
+  background: @red;
+  border: 1px solid @red;
+}
+
+@header-height: 80px;
+
+.app-layout {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: @header-height calc(100vh - @header-height);
+  grid-template-areas:
+    'header'
+    'content';
+}
+
+.app-navbar {
+  width: 100%;
+  height: @header-height;
+  grid-area: header;
+
+  padding: 0 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: @black;
+  color: @white;
+
+  span {
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+  
+  div {
+    display: flex;
+    gap: 1.5rem;
+    color: @not-white;
+    
+    a:hover {
+      transition: color 100ms ease;
+      color: @real-white;
+    }
+  }
+}
+
+.app-content {
+  width: 80vw;
+  height: calc(100vh - @header-height);
+  grid-area: content;
+  justify-self: center;
+}
+
+.table-view {
+  padding: 2em 0;
+}
+
+.table-container {
+  min-width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 5px 10px 18px #00000030;
+}
+
+.grid-table {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-collapse: collapse;
+
+  thead, tbody, tr {
+    display: contents;
+  }
+
+  th, td {
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  th {
+    position: sticky;
+    top: 0;
+
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: @real-white;
+    background: @blue;
+  }
+
+  td {
+    color: @not-black;
+    background: @real-white;
+  }
+
+  td.actions {
+    display: flex;
+    gap: .75rem;
+
+    a:hover {
+      transition: color 100ms ease;
+      color: @blue;
+    }
+  }
+  
+  tr:nth-child(even) td {
+    background: @white;
+  }
+}
+
+.level-error {
+  color: @red;
+  font-size: .9rem;
+}
+
+.form-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 2vh;
+}
+
+.editor-page {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .editor-form {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+  
+    padding: 4em;
+    background: @not-black;
+    color: @white;
+    border-radius: .5rem;
+  }
+}
+
+.hover-red:hover {
+  color: @red !important;
+}

@@ -1,0 +1,70 @@
+<%- include('_header') -%>
+<div class="app-layout">
+  <div class="app-navbar">
+    <% if (typeof owner === 'undefined') { %>
+      New owner
+    <% } else { %>
+      Edit <%= owner.name %>
+    <% } %>
+    </span>
+    <div>
+      <a href="/logout">Logout</a>
+    </div>
+  </div>
+  <div class="app-content editor-page">
+    <form method="post" class="editor-form">
+      <div class="form-item">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          value="<%= (typeof owner === 'undefined') ? '' : owner.name %>"
+          placeholder="Name..."
+          class="form-input"
+        />
+      </div>
+      <div class="form-item">
+        <label for="birthday">Birthday</label>
+        <input
+          type="text"
+          name="birthday"
+          value="<%= (typeof owner === 'undefined') ? '' : owner.birthday %>"
+          placeholder="Birthday..."
+          class="form-input"
+        />
+      </div>
+      <div class="form-item">
+        <label for="address">Address</label>
+        <input
+          type="text"
+          name="address"
+          value="<%= (typeof owner === 'undefined') ? '' : owner.address %>"
+          placeholder="Address..."
+          class="form-input"
+        />
+      </div>
+      <div class="form-item">
+        <label for="phonenumber">Phone number</label>
+        <input
+          type="text"
+          name="phonenumber"
+          value="<%= (typeof owner === 'undefined') ? '' : owner.phonenumber %>"
+          placeholder="Phone number..."
+          class="form-input"
+        />
+      </div>
+      <div class="form-row">
+        <input
+        type="submit"
+        value="Submit"
+        class="btn-blue"
+        />
+        <a
+          href="/owner"
+          class="btn-red"
+        >Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('_footer') -%>

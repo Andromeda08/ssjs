@@ -1,0 +1,22 @@
+<%- include('_header') -%>
+<div class="login-page">
+  <form method="POST" class="login-form">
+    <h2>Login</h2>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      class="form-input"
+      placeholder="password"
+    >
+    <% if (typeof err !== 'undefined') { %>
+      <div class="level-error"><%= err %></div>
+    <% } %>
+    <input
+      type="submit"
+      value="Login"
+      class="btn-green"
+    >
+  </form>
+</div>
+<%- include('_footer') -%> 

@@ -1,0 +1,26 @@
+{
+  "name": "ssjs",
+  "version": "0.0.2",
+  "description": "Server-side javascript course homework",
+  "author": {
+    "name": "Balazs Kovacs",
+    "url": "https://tsukiakari.me/"
+  },
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "helmet": "^4.6.0",
+    "mongoose": "^6.0.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
