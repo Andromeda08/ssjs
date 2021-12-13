@@ -91,7 +91,7 @@ module.exports = function(app) {
     renderMW(objectRepository, 'index')
   );
   
-  app.get(
+  app.use(
     '/logout',
     logoutMW(objectRepository)
   );

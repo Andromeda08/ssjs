@@ -3,8 +3,6 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 
-const indexRoute = require('./routes/index');
-
 // DotEnv
 require('dotenv').config();
 
