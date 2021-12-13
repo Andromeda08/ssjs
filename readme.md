@@ -22,3 +22,4 @@ Create your own `.env` file with the `MONGO_URI` filled.
 - Mongoose
 - EJS
 - less.js
+- mocha & chai
